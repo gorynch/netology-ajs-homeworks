@@ -10,4 +10,9 @@ export default [
   {
     ignores: ["dist", "config/*"]
   },
+  {
+    rules: {
+      "no-unused-vars": "warn" 
+    }
+  }
 ];
