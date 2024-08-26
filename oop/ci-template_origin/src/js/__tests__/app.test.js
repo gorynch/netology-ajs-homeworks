@@ -54,4 +54,17 @@ test('levelUp to dead character error', () => {
   expect(t).toThrow(Error);
 });
 
+test('demage func', () => {
+  const result = new Daemon('name', 'Daemon');
+  result.damage(30);
+  expect(result).toEqual({"attack": 10, "defence": 40, "health": 82, "level": 1, "name": "name", "type": "Daemon"})
+});
 
+test('demage to dead character error', () => {
+  const t = () => {
+    const result = new Daemon('name', 'Daemon', 0, 1);
+    result.demage(30);
+    throw new Error();
+  }
+  expect(t).toThrow(Error);
+});

@@ -25,10 +25,10 @@ export class Character {
         this.attack = attack;
         this.defence = defence;
     }
-    levelUp(){
+    levelUp() {
         if (this.health != 0) {
             this.health = 100;
-            this.level = this.level + 1;
+            this.level++;
             this.attack = this.attack*1.2;
             this.defence = this.defence*1.2;
         }
@@ -37,48 +37,44 @@ export class Character {
         }
         return this;
     }
+    damage(points) {
+        if (this.health != 0) {
+            this.health -= points * (1 - this.defence / 100);
+        }
+        else {
+            throw new Error(`Character is allready dead`);
+        }
+    }
 }
 
 export class Bowman extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 25;
-        this.defence = 25;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 25, 25);
     }
 }
 export class Swordsman extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 40;
-        this.defence = 10;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 40, 10);
     }
 }
 export class Magician extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 10;
-        this.defence = 40;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 10, 40);
     }
 }
 export class Undead extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 25;
-        this.defence = 25;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 25, 25);
     }
 }
 export class Zombie extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 40;
-        this.defence = 10;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 40, 10);
     }
 }
 export class Daemon extends Character {
-    constructor(name, type, health = 100, level = 1) {
-        super(name, type, health, level);
-        this.attack = 10;
-        this.defence = 40;
+    constructor(name, type, health, level, attack, defence) {
+        super(name, type, 100, 1, 10, 40);
     }
 }
 
