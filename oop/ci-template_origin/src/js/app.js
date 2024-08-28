@@ -48,32 +48,32 @@ export class Character {
 }
 
 export class Bowman extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 25, 25);
     }
 }
 export class Swordsman extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 40, 10);
     }
 }
 export class Magician extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 10, 40);
     }
 }
 export class Undead extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 25, 25);
     }
 }
 export class Zombie extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 40, 10);
     }
 }
 export class Daemon extends Character {
-    constructor(name, type, health, level, attack, defence) {
+    constructor(name, type) {
         super(name, type, 100, 1, 10, 40);
     }
 }
